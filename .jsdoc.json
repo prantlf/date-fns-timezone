@@ -1,0 +1,18 @@
+{
+  "source": {
+    "include": [
+      "src/convertToLocalTime.js",
+      "src/convertToTimeZone.js",
+      "src/parseFromTimeZone.js",
+      "src/formatToTimeZone.js"
+    ]
+  },
+  "plugins": ["plugins/markdown"],
+  "opts": {
+    "encoding": "utf8",
+    "destination": "docs",
+    "recurse": true,
+    "readme": "README.md",
+    "template": "node_modules/minami"
+  }
+}
