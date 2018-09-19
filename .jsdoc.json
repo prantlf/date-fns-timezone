@@ -3,6 +3,7 @@
     "include": [
       "src/convertToLocalTime.js",
       "src/convertToTimeZone.js",
+      "src/parseFromString.js",
       "src/parseFromTimeZone.js",
       "src/formatToTimeZone.js"
     ]

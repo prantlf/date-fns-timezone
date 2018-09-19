@@ -10,9 +10,7 @@
       "name": "Test",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": [
-        "-i",
-        "--testPathIgnorePatterns",
-        "browser.test.js"
+        "-i"
       ],
       "internalConsoleOptions": "openOnSessionStart",
       "skipFiles": [

@@ -1,17 +1,14 @@
 /** @module date-fns */
 
-import parse from 'date-fns/parse'
-import { findTimeZone, getUTCOffset, getUnixTime } from 'timezone-support'
 import { parseZonedTime } from 'timezone-support/dist/parse-format'
+import { convertTimeToDate } from 'timezone-support/dist/lookup-convert'
 
 /**
  * @category Common Helpers
- * @summary Parse the date string and convert it from the specified time zone to the local time.
+ * @summary Parse the date string and convert it to the local time.
  *
  * @description
- * Return the date parsed from the date string, optionally using the given format string, and convert the parsed date from the given time zone to the local time.
- *
- * If the format string is omitted, the date string will be parsed by `date-fns/parse`, which supports extended ISO 8601 formats.
+ * Return the date parsed from the date string, using the given format string, and convert the parsed date to the local time.
  *
  * The following tokens will be recognized in the format string then:
  *
@@ -45,47 +42,22 @@ import { parseZonedTime } from 'timezone-support/dist/parse-format'
  * The time zone has to be specified as a canonical name from the [IANA time zone list]{@link https://en.wikipedia.org/wiki/List_of_tz_database_time_zones}.
  *
  * @param {String} dateString - the value to convert
- * @param {String} [formatString] - the custom format to parse the date from
- * @param {Object} options - the object with options
- * @param {0 | 1 | 2} [options.additionalDigits=2] - the additional number of digits in the extended year format
- * @param {String} options.timeZone - the canonical name of the source time zone
+ * @param {String} formatString - the custom format to parse the date from
  * @returns {Date} the parsed date in the local time zone
  *
  * @example
- * // Parse string '2014-02-11 11:30:30 AM' to date, New York time:
- * var result = parseFromTimeZone('2014-02-11 11:30:30',
- *   { timeZone: 'America/New_York' })
- * //=> Tue Feb 11 2014 16:30:30 UTC
- *
- * @example
- * // Parse string '11.2.2014 11:30:30' to date, Berlin time:
- * var result = parseFromTimeZone('11.2.2014 11:30:30',
- *   'D.M.YYYY H:mm:ss', { timeZone: 'Europe/Berlin' })
+ * // Parse string '11.2.2014 11:30:30' to date in Berlin:
+ * var result = parseFromTimeZone('11.2.2014 11:30:30', 'D.M.YYYY H:mm:ss')
  * //=> Tue Feb 11 2014 10:30:30 UTC
  *
- * @example
- * // Parse string '+02014101', if the additional number of digits
- * // in the extended year format is 1, Madrid time:
- * var result = parseFromTimeZone('+02014101',
- *   { additionalDigits: 1, timeZone: 'Europe/Madrid' })
- * //=> Fri Apr 10 2014 22:00:00 UTC
+ * // Parse string '02/11/2014 11:30:30' to date, New York time:
+ * var result = parseFromString('02/11/2014 11:30:30 AM GMT-0500 (EDT)',
+ *   'MM/DD/YYYY h:mm:ss.SSS A [GMT]ZZ (z)')
+ * //=> Tue Feb 11 2014 16:30:30 UTC
  */
-function parseFromTimeZone (dateString, formatString, options) {
-  if (typeof formatString !== 'string') {
-    options = formatString
-    formatString = undefined
-  }
-  let { timeZone } = options
-  timeZone = findTimeZone(timeZone)
-  if (formatString) {
-    const time = parseZonedTime(dateString, formatString)
-    const unixTime = getUnixTime(time, timeZone)
-    return new Date(unixTime)
-  }
-  const date = parse(dateString, options)
-  let { offset } = getUTCOffset(date, timeZone)
-  offset -= date.getTimezoneOffset()
-  return new Date(date.valueOf() + offset * 60 * 1000)
+function parseFromString (dateString, formatString) {
+  const time = parseZonedTime(dateString, formatString)
+  return convertTimeToDate(time)
 }
 
-export { parseFromTimeZone }
+export { parseFromString }

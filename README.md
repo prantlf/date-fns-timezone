@@ -8,7 +8,7 @@ utm_content=prantlf/date-fns-timezone&amp;utm_campaign=Badge_Grade)
 [![devDependency Status](https://david-dm.org/prantlf/date-fns-timezone/dev-status.svg)](https://david-dm.org/prantlf/date-fns-timezone#info=devDependencies)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Provides parsing and formatting date strings and time zone conversions supporting [IANA time zones]. Date parsing, formatting and other queries and manipulations are provided by [date-fns]. List of canonical time zone names and time zone conversions are provided by [timezone-support].
+Provides parsing and formatting date strings and time zone conversions supporting [IANA time zones], following the design of functions in [date-fns]. List of canonical time zone names is provided by [timezone-support].
 
 - [Synopsis](#synopsis)
 - [Installation and Loading](#installation-and-loading)
@@ -143,6 +143,12 @@ const enteredTime = '2018-09-02 12:04:30.982'
 const timeZone = 'Europe/Berlin'
 const storedDate = parseFromTimeZone(enteredTime, { timeZone })
 // Contains date "2018-09-02T10:04:30.982Z"
+
+const enteredTime = '09/02/2018 12:04:30.982 PM'
+const customFormat = 'MM/DD/YYYY h:mm:ss.SSS A'
+const timeZone = 'America/New_York'
+const storedDate = parseFromTimeZone(enteredTime, { timeZone })
+// Contains date "2018-09-02T18:04:30.982Z"
 ```
 
 See the function [parseFromTimeZone](#parsefromtimezone) for more information.

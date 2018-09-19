@@ -14,12 +14,6 @@
       }
     },
     {
-      "label": "build:debug",
-      "type": "npm",
-      "script": "build:debug",
-      "problemMatcher": []
-    },
-    {
       "label": "test",
       "type": "npm",
       "script": "test",

@@ -54,6 +54,16 @@ export default [
     ]
   },
   {
+    input: 'src/parseFromString.js',
+    output: {
+      file: 'dist/parseFromString.js',
+      format: 'cjs'
+    },
+    plugins: [
+      babel({ exclude: 'node_modules/**' })
+    ]
+  },
+  {
     input: 'src/parseFromTimeZone.js',
     output: {
       file: 'dist/parseFromTimeZone.js',

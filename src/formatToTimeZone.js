@@ -1,6 +1,5 @@
 /** @module date-fns */
 
-import parse from 'date-fns/parse'
 import formatDate from 'date-fns/format'
 import { findTimeZone, getUTCOffset } from 'timezone-support'
 
@@ -72,7 +71,7 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  * The result may vary by locale.
  *
  * @param {Date|String|Number} date - the original date
- * @param {String} [format='YYYY-MM-DDTHH:mm:ss.SSSZ'] - the string of tokens
+ * @param {String} formatString - the string of formatting tokens
  * @param {Object} options - the object with options
  * @param {Object} [options.locale=enLocale] - the locale object
  * @param {String} options.timeZone - the canonical name of the target time zone
@@ -98,17 +97,16 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  * )
  * //=> '12:00, 2-a de julio 2014 (+02:00 CEST)'
  */
-function formatToTimeZone (date, format, options) {
+function formatToTimeZone (date, formatString, options) {
   let { timeZone, convertTimeZone } = options
-  date = parse(date)
   timeZone = findTimeZone(timeZone)
   timeZone = getUTCOffset(date, timeZone)
   if (convertTimeZone !== false) {
     const offset = timeZone.offset - date.getTimezoneOffset()
     date = new Date(date.valueOf() - offset * 60 * 1000)
   }
-  format = formatTimeZoneTokens(format, timeZone)
-  return formatDate(date, format, options)
+  formatString = formatTimeZoneTokens(formatString, timeZone)
+  return formatDate(date, formatString, options)
 }
 
 function padToTwoDigits (number) {
