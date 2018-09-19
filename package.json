@@ -73,10 +73,10 @@
   },
   "dependencies": {
     "date-fns": "^1.29.0",
-    "timezone-support": "^1.3.0"
+    "timezone-support": "^1.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.1",
+    "@babel/core": "^7.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "benchmark": "^2.1.4",
