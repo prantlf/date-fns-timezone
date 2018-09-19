@@ -3,7 +3,6 @@
 [![Build Status](https://travis-ci.org/prantlf/date-fns-timezone.png)](https://travis-ci.org/prantlf/date-fns-timezone)
 [![Coverage Status](https://coveralls.io/repos/github/prantlf/date-fns-timezone/badge.svg?branch=master)](https://coveralls.io/github/prantlf/date-fns-timezone?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4bb0f2ef6c1b4212a4ed2dbf1f3e8b29)](https://www.codacy.com/app/prantlf/date-fns-timezone?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prantlf/date-fns-timezone&amp;utm_campaign=Badge_Grade)
-utm_content=prantlf/date-fns-timezone&amp;utm_campaign=Badge_Grade)
 [![Dependency Status](https://david-dm.org/prantlf/date-fns-timezone.svg)](https://david-dm.org/prantlf/date-fns-timezone)
 [![devDependency Status](https://david-dm.org/prantlf/date-fns-timezone/dev-status.svg)](https://david-dm.org/prantlf/date-fns-timezone#info=devDependencies)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
