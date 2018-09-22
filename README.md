@@ -92,8 +92,8 @@ Load the main module in the browser with plain JavaScript:
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.29.0/date_fns.min.js"></script>
-<script src="https://unpkg.com/timezone-support@1.2.1/dist/index.umd.js"></script>
-<script src="https://unpkg.com/date-fns-timezone@0.0.1/dist/index.umd.js"></script>
+<script src="https://unpkg.com/timezone-support@1.3.1/dist/index.umd.js"></script>
+<script src="https://unpkg.com/date-fns-timezone@0.1.0/dist/index.umd.js"></script>
 <script>
   (() => {
     const {
@@ -108,8 +108,8 @@ Load the main module in the browser with [RequireJS]:
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.29.0/date_fns.min.js"></script>
-<script src="https://unpkg.com/timezone-support@1.2.1/dist/index.umd.js"></script>
-<script src="https://unpkg.com/date-fns-timezone@0.0.1/dist/index.umd.js"></script>
+<script src="https://unpkg.com/timezone-support@1.3.1/dist/index.umd.js"></script>
+<script src="https://unpkg.com/date-fns-timezone@0.1.0/dist/index.umd.js"></script>
 <script>
   require(['date-fns-timezone'], ({ parseFromTimeZone, formatToTimeZone }) => {
   })
@@ -146,7 +146,7 @@ const storedDate = parseFromTimeZone(enteredTime, { timeZone })
 const enteredTime = '09/02/2018 12:04:30.982 PM'
 const customFormat = 'MM/DD/YYYY h:mm:ss.SSS A'
 const timeZone = 'America/New_York'
-const storedDate = parseFromTimeZone(enteredTime, { timeZone })
+const storedDate = parseFromTimeZone(enteredTime, customFormat, { timeZone })
 // Contains date "2018-09-02T18:04:30.982Z"
 ```
 
@@ -170,7 +170,7 @@ See the function [formatToTimeZone](#formattotimezone) for more information.
 
 ### Change the time zone of date
 
-Date pickers usually supply the date, which the user selected, and the time zone is implied from the user settings. The local time in the date value is not the browser-local time and the UTC value cannot be used yet. The date has to be converted from the user time zone to the browser-local time to become valid.
+Date pickers usually supply the date, which the user selected, and the time zone is implied from the user settings. The local time in the date value is not the browser-local time and the UTC value cannot be used. The date has to be converted from the user time zone to the browser-local time to become valid.
 
 ```js
 const { convertToLocalTime } = require('date-fns-timezone/dist/convertToLocalTime')
@@ -181,7 +181,7 @@ const storedDate = convertToLocalTime(chosenDate, { timeZone })
 // Contains date "2018-09-02T10:04:30.982Z"
 ```
 
-Date pickers are usually initialized by a date in the time zone implied from the user settings. However, the browser-local time may be different. The date has to be converted from the browser-local time to the user time zone.
+Date pickers are usually initialized by a date in the time zone implied from the user settings. However, the browser-local time may be different. The date has to be converted from the browser-local time to the user time zone before passed to the picker. Such date can be formatted only by using its getters (getFullYear, getMonth, ...); it is invalid for computations and comparisons, because it cannot be related to UTC.
 
 ```js
 const { convertToTimeZone } = require('date-fns-timezone/dist/convertToTimeZone')
@@ -217,6 +217,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 2018-09-19   v0.1.0   Add parseString without a time zone to cover a gap in date-fns
 * 2018-09-17   v0.0.1   Initial release
 
 ## License
