@@ -16,13 +16,13 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  *
  * @param {Date|String|Number} argument - the value to convert
  * @param {Object} options - the object with options
- * @param {String} options.timeZone - the canonical name of the source time zone
- * @returns {Date} the parsed date in the local time zone
+ * @param {String} options.timeZone - the canonical name of the target time zone
+ * @returns {Date} the parsed date in the target time zone
  *
  * @example
- * // Convert the current time to the New York time zone:
- * var result = convertToTimeZone(new Date(), { timeZone: 'America/New_York' })
- * //=> { date: Date, zone: { abbreviation: 'EST', offset: -300 }
+ * // Convert the current local time to the New York time zone:
+ * const result = convertToTimeZone(new Date(), { timeZone: 'America/New_York' })
+ * Returns { date: Date, zone: { abbreviation: 'EST', offset: -300 }
  */
 function convertToTimeZone (argument, options) {
   let date = parse(argument)

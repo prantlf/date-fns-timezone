@@ -20,9 +20,11 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  * @returns {Date} the parsed date in the local time zone
  *
  * @example
- * // Convert the current time to the New York time zone:
- * var result = convertToLocalTime(new Date(), { timeZone: 'America/New_York' })
- * //=> { date: Date, zone: { abbreviation: 'EST', offset: -300 }
+ * // Convert the time in the New York time zone to the local time:
+ * const date = new Date(2018, 8, 2, 10, 0)
+ * const result = convertToLocalTime(date, { timeZone: 'America/New_York' })
+ * // Returns { date: Date, zone: { abbreviation: 'EDT', offset: -360 }
+ * // The date will be "2018-09-02T16:00:00Z".
  */
 function convertToLocalTime (argument, options) {
   let date = parse(argument)

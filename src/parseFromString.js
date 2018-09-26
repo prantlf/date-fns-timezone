@@ -8,9 +8,9 @@ import { convertTimeToDate } from 'timezone-support/dist/lookup-convert'
  * @summary Parse the date string and convert it to the local time.
  *
  * @description
- * Return the date parsed from the date string, using the given format string, and convert the parsed date to the local time.
+ * Returns the date parsed from the date string using the given format string and converts the parsed date to the local time.
  *
- * The following tokens will be recognized in the format string then:
+ * The following tokens are recognized in the format string:
  *
  * | Token  | Input example    | Description                       |
  * |--------|------------------|-----------------------------------|
@@ -39,21 +39,20 @@ import { convertTimeToDate } from 'timezone-support/dist/lookup-convert'
  *
  * To escape characters in the format string, wrap them in square brackets (e.g. `[G]`). Punctuation symbols (-:/.()) do not need to be wrapped.
  *
- * The time zone has to be specified as a canonical name from the [IANA time zone list]{@link https://en.wikipedia.org/wiki/List_of_tz_database_time_zones}.
- *
- * @param {String} dateString - the value to convert
+ * @param {String} dateString - the string to parse
  * @param {String} formatString - the custom format to parse the date from
  * @returns {Date} the parsed date in the local time zone
  *
  * @example
  * // Parse string '11.2.2014 11:30:30' to date in Berlin:
- * var result = parseFromTimeZone('11.2.2014 11:30:30', 'D.M.YYYY H:mm:ss')
- * //=> Tue Feb 11 2014 10:30:30 UTC
+ * const result = parseFromTimeZone('11.2.2014 11:30:30', 'D.M.YYYY H:mm:ss')
+ * // Returns Tue Feb 11 2014 10:30:30 UTC
  *
+ * @example
  * // Parse string '02/11/2014 11:30:30' to date, New York time:
- * var result = parseFromString('02/11/2014 11:30:30 AM GMT-0500 (EDT)',
+ * const result = parseFromString('02/11/2014 11:30:30 AM GMT-0500 (EDT)',
  *   'MM/DD/YYYY h:mm:ss.SSS A [GMT]ZZ (z)')
- * //=> Tue Feb 11 2014 16:30:30 UTC
+ * // Returns Tue Feb 11 2014 16:30:30 UTC
  */
 function parseFromString (dateString, formatString) {
   const time = parseZonedTime(dateString, formatString)

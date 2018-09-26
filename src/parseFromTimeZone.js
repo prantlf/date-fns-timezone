@@ -9,11 +9,11 @@ import { parseZonedTime } from 'timezone-support/dist/parse-format'
  * @summary Parse the date string and convert it from the specified time zone to the local time.
  *
  * @description
- * Return the date parsed from the date string, optionally using the given format string, and convert the parsed date from the given time zone to the local time.
+ * Returns the date parsed from the date string, optionally using the given format string, and convert the parsed date from the given time zone to the local time.
  *
  * If the format string is omitted, the date string will be parsed by `date-fns/parse`, which supports extended ISO 8601 formats.
  *
- * The following tokens will be recognized in the format string then:
+ * The following tokens are recognized in the format string:
  *
  * | Token  | Input example    | Description                       |
  * |--------|------------------|-----------------------------------|
@@ -44,7 +44,7 @@ import { parseZonedTime } from 'timezone-support/dist/parse-format'
  *
  * The time zone has to be specified as a canonical name from the [IANA time zone list]{@link https://en.wikipedia.org/wiki/List_of_tz_database_time_zones}.
  *
- * @param {String} dateString - the value to convert
+ * @param {String} dateString - the string to parse
  * @param {String} [formatString] - the custom format to parse the date from
  * @param {Object} options - the object with options
  * @param {0 | 1 | 2} [options.additionalDigits=2] - the additional number of digits in the extended year format
@@ -53,15 +53,15 @@ import { parseZonedTime } from 'timezone-support/dist/parse-format'
  *
  * @example
  * // Parse string '2014-02-11 11:30:30 AM' to date, New York time:
- * var result = parseFromTimeZone('2014-02-11 11:30:30',
+ * const result = parseFromTimeZone('2014-02-11 11:30:30',
  *   { timeZone: 'America/New_York' })
- * //=> Tue Feb 11 2014 16:30:30 UTC
+ * // Returns Tue Feb 11 2014 16:30:30 UTC
  *
  * @example
  * // Parse string '11.2.2014 11:30:30' to date, Berlin time:
- * var result = parseFromTimeZone('11.2.2014 11:30:30',
+ * const result = parseFromTimeZone('11.2.2014 11:30:30',
  *   'D.M.YYYY H:mm:ss', { timeZone: 'Europe/Berlin' })
- * //=> Tue Feb 11 2014 10:30:30 UTC
+ * // Returns Tue Feb 11 2014 10:30:30 UTC
  *
  * @example
  * // Parse string '+02014101', if the additional number of digits

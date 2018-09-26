@@ -8,15 +8,15 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  * @summary Format the date in the specified time zone.
  *
  * @description
- * Return the formatted date string in the given format, after converting it, optionally, to the given time zone.
+ * Returns the formatted date string in the given format, after converting it to the given time zone.
  *
  * The input date will be converted to the given time zone by default, using its UTC timestamp.
- * If the local time in the input date is already in the given time zone, set `options.useLocal` to `true`.
- * If the UTC time in the input date is already in the given time zone, set `options.useUTC` to `true`.
+ * If the local time in the input date is already in the given time zone, set `options.convertTimeZone`
+ * to `false`. Otherwise the date will be considered in local time and converted.
  *
  * The time zone has to be specified as a canonical name from the [IANA time zone list]{@link https://en.wikipedia.org/wiki/List_of_tz_database_time_zones}.
  *
- * Accepted tokens:
+ * The following tokens are recognized in the format string:
  *
  * | Unit                    | Token | Result examples                  |
  * |-------------------------|-------|----------------------------------|
@@ -85,17 +85,17 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  *   'MM/dd/yyyy h:mm A [GMT]Z (z)',
  *   { timeZone: 'America/New_York' }
  * )
- * //=> '02/10/2014 7:00 PM GMT-0500 (EST)'
+ * // Returns '02/10/2014 7:00 PM GMT-0500 (EST)'
  *
  * @example
  * // Represent noon on 2 July 2014 in Esperanto, Madrid time:
- * var eoLocale = require('date-fns/locale/eo')
+ * var locale = require('date-fns/locale/eo')
  * var result = formatToTimeZone(
  *   new Date(2014, 6, 2, 12),
  *   "HH:mm, do 'de' MMMM yyyy (Zz)",
- *   { locale: eo, timeZone: 'Europe/Madrid', convertTimeZone: false }
+ *   { locale, timeZone: 'Europe/Madrid', convertTimeZone: false }
  * )
- * //=> '12:00, 2-a de julio 2014 (+02:00 CEST)'
+ * // Returns '12:00, 2-a de julio 2014 (+02:00 CEST)'
  */
 function formatToTimeZone (date, formatString, options) {
   let { timeZone, convertTimeZone } = options
