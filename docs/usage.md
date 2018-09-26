@@ -39,7 +39,7 @@ const storedDate = parseFromTimeZone(enteredTime, customFormat, { timeZone })
 // Contains date "2018-09-02T18:04:30.982Z"
 ```
 
-See the function [parseFromTimeZone](#./API.md#parsefromtimezone) for more information.
+See the function [parseFromTimeZone](./API.md#parsefromtimezone) for more information.
 
 ### Format a date to a string in specific time zone
 
