@@ -85,7 +85,7 @@ function parseFromTimeZone (dateString, formatString, options) {
   const date = parse(dateString, options)
   let { offset } = getUTCOffset(date, timeZone)
   offset -= date.getTimezoneOffset()
-  return new Date(date.valueOf() + offset * 60 * 1000)
+  return new Date(date.getTime() + offset * 60 * 1000)
 }
 
 export { parseFromTimeZone }

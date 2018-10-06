@@ -31,7 +31,7 @@ function convertToLocalTime (argument, options) {
   const timeZone = findTimeZone(options.timeZone)
   let { offset } = getUTCOffset(date, timeZone)
   offset = date.getTimezoneOffset() - offset
-  return new Date(date.valueOf() - offset * 60 * 1000)
+  return new Date(date.getTime() - offset * 60 * 1000)
 }
 
 export { convertToLocalTime }
