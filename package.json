@@ -32,8 +32,9 @@
     "lint": "standard --verbose",
     "compile": "rollup -c",
     "build": "run-s lint compile",
+    "compile:tests": "tsc --lib es6 test/typings.test.ts",
     "check": "jest",
-    "test": "run-s lint check",
+    "test": "run-s lint compile:tests check",
     "doc": "jsdoc -c .jsdoc.json",
     "coverage": "test `node --version | cut -c 2` -eq 8 && cat coverage/lcov.info | coveralls",
     "benchmark": "node perf",
@@ -104,7 +105,8 @@
     "serve-static": "^1.13.2",
     "standard": "^12.0.1",
     "tiny-glob": "^0.2.2",
-    "travis-deploy-once": "^5.0.8"
+    "travis-deploy-once": "^5.0.8",
+    "typescript": "^3.1.1"
   },
   "keywords": [
     "date-fns",

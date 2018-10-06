@@ -71,8 +71,8 @@ Load the main module in the browser with [RequireJS]:
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.29.0/date_fns.min.js"></script>
-<script src="https://unpkg.com/timezone-support@1.3.2/dist/index.umd.js"></script>
-<script src="https://unpkg.com/date-fns-timezone@0.1.0/dist/index.umd.js"></script>
+<script src="https://unpkg.com/timezone-support@1.5.1/dist/index.umd.js"></script>
+<script src="https://unpkg.com/date-fns-timezone@0.1.2/dist/index.umd.js"></script>
 <script>
   require(['date-fns-timezone'], ({ parseFromTimeZone, formatToTimeZone }) => {
   })

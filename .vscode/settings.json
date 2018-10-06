@@ -6,6 +6,7 @@
   "search.exclude": {
     "**/src/lookup/data.js": true,
     "**/dist/**": true,
-    "**/test/browser/**": true
+    "**/test/browser/**": true,
+    "**/test/typings.test.js": true
   }
 }
