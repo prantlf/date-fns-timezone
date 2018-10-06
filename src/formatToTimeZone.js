@@ -1,5 +1,6 @@
 /** @module date-fns */
 
+import parseDate from 'date-fns/parse'
 import formatDate from 'date-fns/format'
 import { findTimeZone, getUTCOffset } from 'timezone-support'
 
@@ -70,7 +71,7 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  *
  * The result may vary by locale.
  *
- * @param {Date|String|Number} date - the original date
+ * @param {Date|String|Number} argument - the original date
  * @param {String} formatString - the string of formatting tokens
  * @param {Object} options - the object with options
  * @param {Object} [options.locale=enLocale] - the locale object
@@ -97,13 +98,14 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  * )
  * // Returns '12:00, 2-a de julio 2014 (+02:00 CEST)'
  */
-function formatToTimeZone (date, formatString, options) {
+function formatToTimeZone (argument, formatString, options) {
+  let date = parseDate(argument)
   let { timeZone, convertTimeZone } = options
   timeZone = findTimeZone(timeZone)
   timeZone = getUTCOffset(date, timeZone)
   if (convertTimeZone !== false) {
     const offset = timeZone.offset - date.getTimezoneOffset()
-    date = new Date(date.valueOf() - offset * 60 * 1000)
+    date = new Date(date.getTime() - offset * 60 * 1000)
   }
   formatString = formatTimeZoneTokens(formatString, timeZone)
   return formatDate(date, formatString, options)
