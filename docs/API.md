@@ -102,7 +102,7 @@ Functions converting to an arbitrary time zone accept either a `Date` object, or
 ### convertToLocalTime
 
 ```
-convertToLocalTime(date: Date|String|Number, options: Object) : Date
+convertToLocalTime(date: Date|string|number, options: object) : Date
 ```
 
 Converts the given date from the given time zone to the local time and returns it as a new `Date` object. Getters for local time parts of the input `Date` object (`getFullYear`, `getMonth`, ...) will be assumed to return time in the given time zone.
@@ -125,7 +125,7 @@ const result = convertToLocalTime(date, { timeZone: 'America/New_York' })
 ### convertToTimeZone
 
 ```
-convertToTimeZone(date: Date|Number|String, options: Object) : Date
+convertToTimeZone(date: Date|number|string, options: object) : Date
 ```
 
 Converts the given date from the local time to the given time zone and returns a new `Date` object, which has its local time set to it. The returned `Date` object should not be used form comparisons or other computations. Only the its getters for the local time parts can be used (`getFullYear`, `getMonth`, ...).
@@ -146,7 +146,7 @@ var result = convertToTimeZone(new Date(), { timeZone: 'America/New_York' })
 ### formatToTimeZone
 
 ```
-formatToTimeZone(date: Date|String|Number, format: String, options: Object) : String
+formatToTimeZone(date: Date|string|number, format: string, options: object) : string
 ```
 
 Returns the formatted date string in the given format, after converting it to the given time zone.
@@ -240,7 +240,7 @@ const result = formatToTimeZone(
 ### parseFromString
 
 ```
-parseFromString(input: String, format: String) : Date
+parseFromString(input: string, format: string) : Date
 ```
 
 Returns the date parsed from the date string using the given format string and converts the parsed date to the local time.
@@ -295,7 +295,7 @@ const result = parseFromString(
 ### parseFromTimeZone
 
 ```
-parseFromTimeZone(input: String, format: String, options: Object) : Date
+parseFromTimeZone(input: string, format?: string, options: object) : Date
 ```
 
 Returns the date parsed from the date string, optionally using the given format string, and converts the parsed date from the given time zone to the local time.
