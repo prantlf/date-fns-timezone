@@ -74,10 +74,10 @@
   },
   "dependencies": {
     "date-fns": "^1.29.0",
-    "timezone-support": "^1.3.2"
+    "timezone-support": "^1.5.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.0",
+    "@babel/core": "^7.1.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "benchmark": "^2.1.4",
@@ -95,17 +95,17 @@
     "minami": "^1.2.3",
     "moment-timezone": "^0.5.21",
     "npm-run-all": "^4.1.3",
-    "puppeteer": "^1.8.0",
+    "puppeteer": "^1.9.0",
     "regenerator-runtime": "^0.12.1",
     "rimraf": "^2.6.2",
-    "rollup": "^0.66.2",
+    "rollup": "^0.66.4",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-uglify": "^6.0.0",
-    "semantic-release": "^15.9.16",
+    "semantic-release": "^15.9.17",
     "serve-static": "^1.13.2",
     "standard": "^12.0.1",
     "tiny-glob": "^0.2.2",
-    "travis-deploy-once": "^5.0.8",
+    "travis-deploy-once": "^5.0.9",
     "typescript": "^3.1.1"
   },
   "keywords": [
