@@ -1,6 +1,6 @@
 import {
   convertToLocalTime, convertToTimeZone, parseFromString, parseFromTimeZone, formatToTimeZone
-} from '..'
+} from '../src'
 
 declare function test (label: string, callback: Function)
 
