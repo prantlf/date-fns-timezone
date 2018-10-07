@@ -1,8 +1,8 @@
 import {
   convertToLocalTime, convertToTimeZone, parseFromString, parseFromTimeZone, formatToTimeZone
-} from '../src'
+} from '..'
 
-declare function test(label: string, callback: Function)
+declare function test (label: string, callback: Function)
 
 test('TypeScript Type Information', () => {
   const timestamp = 1538822326765
