@@ -4,7 +4,7 @@ import {
 
 declare function test (label: string, callback: Function)
 
-test('TypeScript Type Information', () => {
+test('Type declarations for TypeScript', () => {
   const timestamp = 1538822326765
   const date = new Date(timestamp)
   const dateString = '2018-10-06T10:38:46.765Z'
