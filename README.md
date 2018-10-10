@@ -63,6 +63,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 2018-10-10   v0.1.4   Fix compatibility with IE. Thanks, [Andrii](https://github.com/AndriiDidkivsky)!
 * 2018-10-06   v0.1.2   Add TypeScript export declarations.
 * 2018-09-19   v0.1.0   Add parseString without a time zone to cover a gap in date-fns
 * 2018-09-17   v0.0.1   Initial release
