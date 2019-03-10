@@ -1,6 +1,6 @@
 /* global describe, it, expect */
 
-import { convertToLocalTime } from '../src/convertToLocalTime'
+import convertToLocalTime from '../src/convertToLocalTime'
 
 describe('convertToLocalTime', () => {
   it('is a function', () => {

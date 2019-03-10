@@ -1,6 +1,6 @@
 /* global describe, it, expect */
 
-import { formatToTimeZone } from '../src/formatToTimeZone'
+import formatToTimeZone from '../src/formatToTimeZone'
 
 describe('formatToTimeZone', () => {
   it('is a function', () => {
@@ -21,7 +21,10 @@ describe('formatToTimeZone', () => {
     const format = 'MM/DD/YYYY h:mm:ss.SSS A [GMT]ZZ (z)'
     const timeZone = 'Pacific/Honolulu'
     const expectedString = '09/01/2018 6:01:36.386 PM GMT-1000 (HST)'
-    const actualString = formatToTimeZone(date, format, { timeZone, convertTimeZone: false })
+    const actualString = formatToTimeZone(date, format, {
+      timeZone,
+      convertTimeZone: false
+    })
     expect(actualString).toEqual(expectedString)
   })
 })
