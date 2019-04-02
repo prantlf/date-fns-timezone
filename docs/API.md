@@ -158,7 +158,7 @@ The input date will be converted to the given time zone by default, using its UT
 * `options` (Object) - the object with options
 * `options.locale` (Object) - the locale object; optional, defaults to English
 * `options.timeZone` (String) - the canonical name of the target time zone
-* `options.convertTimeZone` (String) - if the date should be converted to the given time zone before formatting; optional, defaults to `true`
+* `options.convertTimeZone` (Boolean) - if the date should be converted to the given time zone before formatting; optional, defaults to `true`
 
 The locale can be loaded and applied in the same way, as it works for the function [`format` from date-fns](https://date-fns.org/v1.29.0/docs/format).
 
