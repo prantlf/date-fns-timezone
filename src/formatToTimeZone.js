@@ -76,7 +76,7 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  * @param {Object} options - the object with options
  * @param {Object} [options.locale=enLocale] - the locale object
  * @param {String} options.timeZone - the canonical name of the target time zone
- * @param {String} [options.convertTimeZone=true] - if the date should be converted to the given time zone before formatting
+ * @param {Boolean} [options.convertTimeZone=true] - if the date should be converted to the given time zone before formatting
  * @returns {String} the formatted date string
  *
  * @example
