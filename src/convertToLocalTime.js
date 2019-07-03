@@ -34,4 +34,4 @@ function convertToLocalTime (argument, options) {
   return new Date(date.getTime() - offset * 60 * 1000)
 }
 
-export { convertToLocalTime }
+export default convertToLocalTime

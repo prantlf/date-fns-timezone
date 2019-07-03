@@ -59,4 +59,4 @@ function parseFromString (dateString, formatString) {
   return convertTimeToDate(time)
 }
 
-export { parseFromString }
+export default parseFromString

@@ -5,4 +5,4 @@ interface TimeZoneOptions {
 
 declare function convertToTimeZone (dateInput: DateInput, options: TimeZoneOptions): Date
 
-export { convertToTimeZone }
+export default convertToTimeZone

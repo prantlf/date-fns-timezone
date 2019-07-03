@@ -8,4 +8,4 @@ interface FormatTimeZoneOptions extends FormatOptions {
 
 declare function formatToTimeZone (dateInput: DateInput, format: string, options: FormatTimeZoneOptions): string
 
-export { formatToTimeZone }
+export default formatToTimeZone
