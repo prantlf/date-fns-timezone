@@ -5,4 +5,4 @@ interface TimeZoneOptions {
 
 declare function formatToTimeZone (dateInput: DateInput, format: string, options: TimeZoneOptions): string
 
-export { formatToTimeZone }
+export default formatToTimeZone

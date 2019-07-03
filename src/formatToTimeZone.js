@@ -141,4 +141,4 @@ function formatTimeZoneTokens (format, timeZone) {
   })
 }
 
-export { formatToTimeZone }
+export default formatToTimeZone

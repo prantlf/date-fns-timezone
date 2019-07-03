@@ -88,4 +88,4 @@ function parseFromTimeZone (dateString, formatString, options) {
   return new Date(date.getTime() + offset * 60 * 1000)
 }
 
-export { parseFromTimeZone }
+export default parseFromTimeZone

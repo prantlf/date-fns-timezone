@@ -32,4 +32,4 @@ function convertToTimeZone (argument, options) {
   return new Date(date.getTime() - offset * 60 * 1000)
 }
 
-export { convertToTimeZone }
+export default convertToTimeZone
