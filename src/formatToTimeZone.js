@@ -135,10 +135,11 @@ function formatTimeZoneTokens (format, timeZone) {
         return `[${timeZone.abbreviation}]`
       case 'Z':
         return formatTimeZoneOffset(timeZone.offset, ':')
-      default: // 'ZZ'
+      default:
+        // 'ZZ'
         return formatTimeZoneOffset(timeZone.offset, '')
     }
   })
 }
 
-export { formatToTimeZone }
+export default formatToTimeZone

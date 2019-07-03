@@ -1,5 +1,13 @@
-export { convertToLocalTime } from './convertToLocalTime'
-export { convertToTimeZone } from './convertToTimeZone'
-export { parseFromString } from './parseFromString'
-export { parseFromTimeZone } from './parseFromTimeZone'
-export { formatToTimeZone } from './formatToTimeZone'
+import convertToLocalTime from './convertToLocalTime'
+import convertToTimeZone from './convertToTimeZone'
+import parseFromString from './parseFromString'
+import parseFromTimeZone from './parseFromTimeZone'
+import formatToTimeZone from './formatToTimeZone'
+
+export {
+  convertToLocalTime,
+  convertToTimeZone,
+  parseFromString,
+  parseFromTimeZone,
+  formatToTimeZone
+}

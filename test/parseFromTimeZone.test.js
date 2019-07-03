@@ -1,6 +1,6 @@
 /* global describe, it, expect */
 
-import { parseFromTimeZone } from '../src/parseFromTimeZone'
+import parseFromTimeZone from '../src/parseFromTimeZone'
 
 describe('parseFromTimeZone', () => {
   it('is a function', () => {

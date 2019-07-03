@@ -1,6 +1,6 @@
 /* global describe, it, expect */
 
-import { convertToTimeZone } from '../src/convertToTimeZone'
+import convertToTimeZone from '../src/convertToTimeZone'
 
 describe('convertToTimeZone', () => {
   it('is a function', () => {

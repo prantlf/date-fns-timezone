@@ -1,6 +1,6 @@
 /* global describe, it, expect */
 
-import { parseFromString } from '../src/parseFromString'
+import parseFromString from '../src/parseFromString'
 
 describe('parseFromString', () => {
   it('is a function', () => {

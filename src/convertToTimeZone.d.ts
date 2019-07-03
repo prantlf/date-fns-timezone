@@ -3,6 +3,9 @@ interface TimeZoneOptions {
   timeZone: string
 }
 
-declare function convertToTimeZone (dateInput: DateInput, options: TimeZoneOptions): Date
+declare function convertToTimeZone (
+  dateInput: DateInput,
+  options: TimeZoneOptions
+): Date
 
-export { convertToTimeZone }
+export default convertToTimeZone

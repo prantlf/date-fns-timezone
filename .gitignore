@@ -2,3 +2,5 @@ coverage
 dist
 node_modules
 test/typings.test.js
+package-lock.json
+yarn.lock
