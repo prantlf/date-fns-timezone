@@ -27,7 +27,7 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  * // The date will be "2018-09-02T16:00:00Z".
  */
 function convertToLocalTime (argument, options) {
-  let date = parse(argument)
+  const date = parse(argument)
   const timeZone = findTimeZone(options.timeZone)
   let { offset } = getUTCOffset(date, timeZone)
   offset = date.getTimezoneOffset() - offset

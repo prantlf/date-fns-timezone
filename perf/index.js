@@ -1,7 +1,7 @@
 const { join } = require('path')
 const { promisify } = require('util')
 let { readdir } = require('fs')
-let { exec } = require('child_process')
+const { exec } = require('child_process')
 
 readdir = promisify(readdir)
 
@@ -33,7 +33,7 @@ function runSuite (suite) {
 (async function () {
   try {
     const suites = await listSuites()
-    for (let suite of suites) {
+    for (const suite of suites) {
       await runSuite(suite)
       console.log()
     }

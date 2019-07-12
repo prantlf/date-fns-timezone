@@ -25,7 +25,7 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  * Returns { date: Date, zone: { abbreviation: 'EST', offset: -300 }
  */
 function convertToTimeZone (argument, options) {
-  let date = parse(argument)
+  const date = parse(argument)
   const timeZone = findTimeZone(options.timeZone)
   let { offset } = getUTCOffset(date, timeZone)
   offset -= date.getTimezoneOffset()
