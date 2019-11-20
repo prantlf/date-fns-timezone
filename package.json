@@ -77,7 +77,7 @@
   },
   "dependencies": {
     "date-fns": "^1.29.0",
-    "timezone-support": "^1.5.5"
+    "timezone-support": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
