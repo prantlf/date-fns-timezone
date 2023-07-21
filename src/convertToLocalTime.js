@@ -28,10 +28,16 @@ import { findTimeZone, getUTCOffset } from 'timezone-support'
  */
 function convertToLocalTime (argument, options) {
   let date = parse(argument)
+  const localOffset = date.getTimezoneOffset()
   const timeZone = findTimeZone(options.timeZone)
-  let { offset } = getUTCOffset(date, timeZone)
-  offset = date.getTimezoneOffset() - offset
-  return new Date(date.getTime() - offset * 60 * 1000)
+  let offset = getUTCOffset(date, timeZone).offset
+  let convertedDate = new Date(date.getTime() - (localOffset - offset) * 60 * 1000)
+  // check if the converted date may have moved to a different offset (probably because of a DST switch)
+  let convertedOffset = getUTCOffset(convertedDate, timeZone).offset
+  if (convertedOffset !== offset) {
+    convertedDate = new Date(date.getTime() - (localOffset - convertedOffset) * 60 * 1000)
+  }
+  return convertedDate
 }
 
 export { convertToLocalTime }
